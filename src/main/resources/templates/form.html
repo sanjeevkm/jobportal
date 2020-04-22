@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <style type="text/css">
+         label {
+         display: inline-block;
+         width: 200px;
+         margin: 5px;
+         text-align: left;
+         }
+         input[type=text], input[type=file], select {
+         display: inline-block;
+         width: 200px;
+         }
+      </style>
+   </head>
+   <body>
+      <div align="center">
+         <h1>Candidate Application Form</h1>
+         <form action="#" th:action="@{/upload/cv}" method="POST" th:object="${formData}" enctype="multipart/form-data">
+            <label>First name:</label>
+            <input type="text" th:field="*{firstName}" />
+            <br/>
+            <label>Last name:</label>
+            <input type="text" th:field="*{lastName}" />
+            <br/>
+            <label>E-mail:</label>
+            <input type="text" th:field="*{email}" />
+            <br/>
+            <label>Job title:</label>
+            <input type="text" th:field="*{jobTitle}" />
+            <br/>
+            <label>Source:</label>
+            <input type="text" th:field="*{source}" />
+            <br/>
+            <label>File:</label>
+            <input type="file" th:field="*{file}" /> 
+            <br/>
+            <input type="submit" value="Submit"/>    
+         </form>
+      </div>
+   </body>
+</html>
